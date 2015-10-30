@@ -20,7 +20,6 @@ Open the `xcodeproj` file and check out the storyboard. The interface is a full-
 1. In the view controller's `-viewDidLoad`, subscribe to the relevant notification center messages. These are called `UIKeyboardWillShowNotification` and `UIKeyboardWillHideNotification`.
 
 2. In the method that handles the keyboard appearing, you'll want to animate the text field to be above the keyboard. This will involve a few steps:
-    
     - You'll need an outlet for the relevant constraints. They've already been made in the storyboard.
     - To retrieve the size of the keyboard, you'll need to grab a value from the `userInfo` property of the `NSNotification` argument to your method. Read the documentation on this. Don't just hard-code the keyboard height! Custom keyboards can be of any height, and even the emoji keyboard is different than the standard English one.
     - With the height of the keyboard in hand, you should be able to just animate a change in the constraint's constant. Woo!
